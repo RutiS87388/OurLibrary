@@ -1,0 +1,134 @@
+.e{
+ height: 100px;
+ width: 100px;
+}
+.navbar {
+    background-color:black;
+    overflow: hidden;
+  }
+
+  .navbar-brand {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  .navbar-menu {
+    float: right;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .navbar-menu li {
+    float: left;
+  }
+
+  .navbar-menu li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  .navbar-menu li a:hover {
+    background-color: #ddd;
+    color: black;
+    border-radius: 5px;
+  
+  }
+  li{
+    margin: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .op{
+    margin: 50px;
+    font-size: 30px;
+    color: #ddd;
+
+  }
+
+  img{
+    height: 100px;
+    width: 250px;
+   }
+   .navbar {
+       background-color:black;
+       overflow: hidden;
+     }
+   
+     .navbar-brand {
+       float: left;
+       display: block;
+       color: white;
+       text-align: center;
+       padding: 14px 16px;
+       text-decoration: none;
+     }
+   
+     .navbar-menu {
+       float: right;
+       list-style-type: none;
+       margin: 0;
+       padding: 0;
+     }
+   
+     .navbar-menu li {
+       float: left;
+     }
+   
+     .navbar-menu li a {
+       display: block;
+       color: white;
+       text-align: center;
+       padding: 14px 16px;
+       text-decoration: none;
+     }
+   
+     .navbar-menu li a:hover {
+       background-color: #ddd;
+       color: black;
+       border-radius: 5px;
+     
+     }
+     li{
+       margin: 50px;
+       font-family: Arial, Helvetica, sans-serif;
+     }
+     .op{
+       margin: 50px;
+       font-size: 30px;
+       color: #ddd;
+   
+     }
+     .nav{
+      margin: 50px;
+      font-size: 30px;
+      color: #ddd;
+  
+    }
+    nav{
+      background-color: #03a9bf;
+      height: 100px;
+    }
+    //  ::ng-deep{
+    //   .mat-mdc-tab .mdc-tab__text-label{
+    //     margin: 50px;
+    //      font-size: 30px;
+    //      color: #ddd;
+    //   }
+    //  }
+         /* Example: targeting a specific tab group */
+  //   .my-custom-tab-group .mat-mdc-tab .mdc-tab__text-label {
+  //     color: blue;
+  //     font-weight: bold;
+  // }
+
+  a{
+    font-family: Arial, Helvetica, sans-serif;
+  }
+   

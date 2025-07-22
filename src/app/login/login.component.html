@@ -1,0 +1,20 @@
+
+ <div class="login-container"> 
+   <div class="login-box">
+    <h2>כניסה למערכת</h2>
+    <span [innerText]="message" id="message"></span>
+    <form [formGroup]="formGroup" (ngSubmit)="login()">
+      <div style="height:20px"> </div>
+      <div class="input-container">
+        <label for="password">:סיסמא</label>
+        <input type="password" id="pwd" class="formControlLogin" formControlName="password" required
+          placeholder="הכנס סיסמא">
+        <span class="errorText" *ngIf="formGroup.get('password')?.invalid && mouseoverLogin" [innerText]="'!שדה חובה'">
+        </span>
+      </div>
+      <div class="footer">
+        <button (click)="login()">שלח</button>
+      </div>
+      <!-- <button (click)="emitOutput()">Send Output</button> -->
+
+

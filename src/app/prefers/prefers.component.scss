@@ -1,0 +1,45 @@
+.f {
+    border: solid 5px;
+    border-color: black;
+    text-align: center;
+    padding: 30px;
+}
+
+input {
+    width: 250px;
+    padding: 12px;
+    border: solid 5px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button {
+    width: 200px;
+    height: 50px;
+    // padding: 12px;
+    border: solid 2px;
+    border-radius: 5px;
+    font-size: 20px;
+    background-color: white;
+    // cursor: pointer;
+    // transition: background-color 0.3s ease;
+}
+
+.h3 {
+    font-size: 60px;
+    font-family: Cursive;
+    color: #03a9bf;
+}
+img{
+    width: 30px;
+    height: 30px;
+}
+p{
+    text-align: center;
+    direction: unset;
+}
+body{
+    direction: rtl;
+}

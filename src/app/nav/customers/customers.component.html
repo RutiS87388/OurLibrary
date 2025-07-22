@@ -1,0 +1,54 @@
+<div class="t">
+  <input [(ngModel)]='customerName' type="text" placeholder="Search" (keyup.enter)="filter()">
+  <button (click)="filter()">🔍</button>
+  <button (click)="openDialog()">Add Customer</button>
+</div>
+<h1>Customers</h1>
+<table>
+  <thead>
+    <tr>
+      <th>subscriberId</th>
+      <th>subscriberName</th>
+      <th>subscriberLastName</th>
+      <th>subscriberEmail</th>
+      <th>subscriberPhone</th>
+      <th>subscriberAddress</th>
+ 
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let customer of dataSource">
+      <td>{{ customer.subscriberId }}</td>
+      <td>{{ customer.subscriberName }}</td>
+      <td>{{ customer.subscriberLastName }}</td>
+      <td>{{ customer.subscriberEmail }}</td>
+      <td>{{ customer.subscriberPhone }}</td>
+      <td>{{ customer.subscriberAddress }}</td>
+      <button (click)="openEditDialog(customer)" class="styleBottom">  Edit  </button>
+      <button (click)="deleteCustomer(customer)"class="styleBottom" >Delete</button>
+    </tr>
+  </tbody>
+</table>
+
+<ng-template #dialogTemplate>
+  <h2>Add New Customer</h2>
+  <input [(ngModel)]="newCustomer.subscriberId" placeholder="Subscriber ID">
+  <input [(ngModel)]="newCustomer.subscriberName" placeholder="First Name">
+  <input [(ngModel)]="newCustomer.subscriberLastName" placeholder="Last Name">
+  <input [(ngModel)]="newCustomer.subscriberEmail" placeholder="Email">
+  <input [(ngModel)]="newCustomer.subscriberPhone" placeholder="Phone">
+  <input [(ngModel)]="newCustomer.subscriberAddress" placeholder="Address">
+  <button (click)="addCustomer()">Submit</button>
+</ng-template>
+
+<div *ngIf="isDialogOpen" class="dialog">
+  <h2>Edit Borrow</h2>
+  <input [(ngModel)]="newCustomer.subscriberId" placeholder="Borrow Name">
+  <input [(ngModel)]="newCustomer.subscriberName" placeholder="Borrow Name">
+  <input [(ngModel)]="newCustomer.subscriberLastName" placeholder="Writer Name">
+  <input [(ngModel)]="newCustomer.subscriberEmail" placeholder="Publishing Date">
+  <input [(ngModel)]="newCustomer.subscriberPhone" placeholder="Category Name">
+  <input [(ngModel)]="newCustomer.subscriberAddress" placeholder="Age Name">
+  <button (click)="updateCustomer()">Update</button>
+  <button (click)="closeDialog()">Cancel</button>
+</div>

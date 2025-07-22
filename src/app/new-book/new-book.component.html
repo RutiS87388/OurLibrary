@@ -1,0 +1,129 @@
+
+<div class="login-container">
+    <div class="login-box">
+      <h2>add the details</h2>
+      <form [formGroup]="formGroup" (ngSubmit)="login()">
+
+
+    <div class="input-container">
+        <label for="name">name</label>
+        <input 
+        type="text"
+        id="pwd"
+        class="formControlLogin"
+        formControlName="name"
+        required
+        placeholder="Enter your name">
+        <span class="errorText"
+        *ngIf="formGroup.get('name')?.invalid && mouseoverLogin"
+        [innerText]="'Mandatory field'">
+      </span>
+    </div>
+    <div class="input-container">
+        <label for="writerName">writerName</label>
+        <input 
+        type="text"
+        id="pwd"
+        class="formControlLogin"
+        formControlName="writerName"
+        required
+        placeholder="Enter your writerName">
+        <span class="errorText"
+        *ngIf="formGroup.get('writerName')?.invalid && mouseoverLogin"
+        [innerText]="'Mandatory field'">
+      </span>
+    </div>
+    <div class="input-container">
+        <label for="publishingDate">publishingDate</label>
+        <input 
+        type="text"
+        id="pwd"
+        class="formControlLogin"
+        formControlName="publishingDate"
+        required
+        placeholder="Enter your publishingDate">
+        <span class="errorText"
+        *ngIf="formGroup.get('publishingDate')?.invalid && mouseoverLogin"
+        [innerText]="'Mandatory field'">
+      </span>
+    </div>
+    <div class="input-container">
+      <label for="categoryName">categoryName</label>
+      <input 
+      type=" text"
+      id="pwd"
+      class="formControlLogin"
+      formControlName="categoryName"
+      required
+      placeholder="categoryName">
+      <span class="errorText"
+      *ngIf="formGroup.get('categoryName')?.invalid && mouseoverLogin"
+      [innerText]="'Mandatory field'">
+    </span>
+  </div>
+  <div class="input-container">
+    <label for="ageName">ageName</label>
+    <input 
+    type=" text"
+    id="pwd"
+    class="formControlLogin"
+    formControlName="ageName"
+    required
+    placeholder="ageName">
+    <span class="errorText"
+    *ngIf="formGroup.get('ageName')?.invalid && mouseoverLogin"
+    [innerText]="'Mandatory field'">
+  </span>
+</div>
+<div class="input-container">
+  <label for="copies">copies</label>
+  <input 
+  type="password"
+  id="pwd"
+  class="formControlLogin"
+  formControlName="copies"
+  required
+  placeholder="copies">
+  <span class="errorText"
+  *ngIf="formGroup.get('copies')?.invalid && mouseoverLogin"
+  [innerText]="'Mandatory field'">
+</span>
+</div>
+<div class="input-container">
+  <label for="copiesInLibrary">copiesInLibrary</label>
+  <input 
+  type="password"
+  id="pwd"
+  class="formControlLogin"
+  formControlName="copiesInLibrary"
+  required
+  placeholder="copiesInLibrary">
+  <span class="errorText"
+  *ngIf="formGroup.get('copiesInLibrary')?.invalid && mouseoverLogin"
+  [innerText]="'Mandatory field'">
+</span>
+</div>
+<div class="input-container">
+  <label for="availabloToBorrow">availabloToBorrow</label>
+  <input 
+  type="text"
+  id="pwd"
+  class="formControlLogin"
+  formControlName="availabloToBorrow"
+  required
+  placeholder="availabloToBorrow">
+  <span class="errorText"
+  *ngIf="formGroup.get('availabloToBorrow')?.invalid && mouseoverLogin"
+  [innerText]="'Mandatory field'">
+</span>
+</div>
+    
+    <div (mouseenter)="mouseoverLogin=true"
+    (mouseleave)="mouseoverLogin=false">
+    <button type="submit" [disabled]="formGroup.invalid" (click) = "addBook()" >Login</button>
+
+
+  </div>
+  </form>
+  </div>
+  </div>

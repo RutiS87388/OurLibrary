@@ -1,0 +1,86 @@
+
+<div class="login-container">
+    <div class="login-box">
+      <h2>Hello, new customer</h2>
+      <form [formGroup]="formGroup" (ngSubmit)="login()">
+        <div class="input-container">
+          <label for="firstName">First name</label>
+          <input 
+          type="text"   
+          id="firstName"
+          class="formControlLogin"
+          formControlName="firstName"
+          required
+          placeholder="Enter your First Name">
+          <span class="errorText"
+          *ngIf="formGroup.get('firstName')?.invalid && mouseoverLogin"
+          [innerText]="'Mandatory field'">
+        </span>
+      </div>
+      <div class="input-container">
+        <label for="lastName">Last Name</label>
+        <input 
+        type="text"
+        id="pwd"
+        class="formControlLogin"
+        formControlName="lastName"
+        required
+        placeholder="Enter your Last Name">
+        <span class="errorText"
+        *ngIf="formGroup.get('lastName')?.invalid && mouseoverLogin"
+        [innerText]="'Mandatory field'">
+      </span>
+    </div>
+    <div class="input-container">
+        <label for="email">Email</label>
+        <input 
+        type="password"
+        id="pwd"
+        class="formControlLogin"
+        formControlName="email"
+        required
+        placeholder="Enter your Email">
+        <span class="errorText"
+        *ngIf="formGroup.get('email')?.invalid && mouseoverLogin"
+        [innerText]="'Mandatory field'">
+      </span>
+    </div>
+    <div class="input-container">
+        <label for="phone">Phone</label>
+        <input 
+        type="password"
+        id="pwd"
+        class="formControlLogin"
+        formControlName="phone"
+        required
+        placeholder="Enter your Phone">
+        <span class="errorText"
+        *ngIf="formGroup.get('phone')?.invalid && mouseoverLogin"
+        [innerText]="'Mandatory field'">
+      </span>
+    </div>
+    <div class="input-container">
+        <label for="address">Address</label>
+        <input 
+        type="password"
+        id="pwd"
+        class="formControlLogin"
+        formControlName="address"
+        required
+        placeholder="Enter your Address">
+        <span class="errorText"
+        *ngIf="formGroup.get('password')?.invalid && mouseoverLogin"
+        [innerText]="'Mandatory field'">
+      </span>
+    </div>
+    
+    
+    <div (mouseenter)="mouseoverLogin=true"
+    (mouseleave)="mouseoverLogin=false">
+    <button type="submit" [disabled]="formGroup.invalid" (click) = "changeNavigate('quiz')">Login</button>
+
+
+  </div>
+  </form>
+  </div>
+  </div>

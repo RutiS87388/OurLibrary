@@ -1,0 +1,59 @@
+<div class="t">
+<input [(ngModel)]="bookName" type="text" placeholder="Search" (keyup.enter)="filter()">
+<button (click)="filter()">🔍</button>
+<button (click)="openDialog()">Add book</button>
+</div>
+<h1>Books</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Writer Name</th>
+      <th>Publishing Date</th>
+      <th>Category Name</th>
+      <th>Age Name</th>
+      <th>Copies</th>
+      <th>Copies in library</th>
+      <th>AvailabloToBorrow</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let book of dataSource">
+      <td>{{ book.id }}</td>
+      <td>{{ book.name }}</td>
+      <td>{{ book.writerName }}</td>
+      <td>{{ book.publishingDate }}</td>
+      <td>{{ book.categoryName }}</td>
+      <td>{{ book.ageName }}</td>
+      <td>{{ book.copies }}</td>
+      <td>{{ book.copiesInLibrary }}</td>
+      <td>{{ book.availabloToBorrow }}</td>
+      <button (click)="openEditDialog(book)" class="styleBottom">  Edit  </button>
+     <button (click)="deleteBook(book)"  class="styleBottom">Delete</button>
+    </tr>
+  </tbody>
+</table>
+
+<ng-template #dialogTemplate>
+  <h2>Add New book</h2>
+  <input [(ngModel)]="newBook.name" placeholder=" Name">
+  <input [(ngModel)]="newBook.writerName" placeholder="writer Name">
+  <input [(ngModel)]="newBook.publishingDate" placeholder="publishingDate">
+  <input [(ngModel)]="newBook.categoryName" placeholder="categoryName">
+  <input [(ngModel)]="newBook.ageName" placeholder="ageName">
+
+  <button (click)="addBook()">Submit</button>
+</ng-template>
+
+<div *ngIf="isDialogOpen" class="dialog">
+  <h2>Edit Book</h2>
+  <input [(ngModel)]="newBook.name" placeholder="Book Name">
+  <input [(ngModel)]="newBook.writerName" placeholder="Writer Name">
+  <input [(ngModel)]="newBook.publishingDate" placeholder="Publishing Date">
+  <input [(ngModel)]="newBook.categoryName" placeholder="Category Name">
+  <input [(ngModel)]="newBook.ageName" placeholder="Age Name">
+  <button (click)="updateBook()">Update</button>
+  <button (click)="closeDialog()">Cancel</button>
+</div>

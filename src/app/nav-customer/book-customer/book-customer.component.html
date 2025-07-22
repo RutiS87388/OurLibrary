@@ -1,0 +1,26 @@
+<div class="t">
+    <input [(ngModel)]="bookName" type="text" placeholder="Search" (keyup.enter)="filter()">
+    <button (click)="filter()">🔍</button>
+    </div>
+    <h1>Books</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Writer Name</th>
+          <th>Publishing Date</th>
+          <th>Category Name</th>
+          <th>Age Name</th>
+    
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let book of dataSource">
+          <td>{{ book.name }}</td>
+          <td>{{ book.writerName }}</td>
+          <td>{{ book.publishingDate }}</td>
+          <td>{{ book.categoryName }}</td>
+          <td>{{ book.ageName }}</td>
+        </tr>
+      </tbody>
+    </table>

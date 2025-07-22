@@ -1,0 +1,39 @@
+<nav mat-tab-nav-bar [tabPanel]="tabPanel">
+  <div class="navbar-brand"></div> 
+ <!-- @if(openNavCustomer){
+  <a mat-tab-link (click)="change('nav-customer/bookCustomer')" [active]="active == 'nav-customer/bookCustomer'">
+    ספרים
+  </a>
+  <a mat-tab-link (click)="change('nav-customer/history-customer')"
+    [active]="active == 'nav-customer/history-customer'">
+    הסטוריה
+  </a>
+
+  } -->
+   @if(openNav){
+    <a mat-tab-link (click)="change('nav/books')" [active]="active == 'nav/books'">
+      ספרים
+    </a>
+    <a mat-tab-link (click)="change('nav/borrow')" [active]="active == 'nav/borrow'">
+      השאלות
+    </a>
+    <a mat-tab-link (click)="change('nav/customers')" [active]="active == 'nav/customers'">
+      לקוחות
+    </a>
+    <a mat-tab-link (click)="change('/home')" [active]="active == '/'">
+      דף הבית
+    </a>
+  } 
+  @if(!openNavCustomer && ! openNav)  {
+  <!-- <a mat-tab-link (click)="openDialog()" [active]="active == 'login'"> -->
+    התחברות
+  <!-- </a> -->
+  }
+  <a mat-tab-link (click)="change('information')" [active]="active == 'information'">
+    אודות החברה שלנו
+  </a>
+  <a mat-tab-link (click)="change('service')" [active]="active == 'service'">
+    השרותים שאנו מציעים </a>
+</nav>
+<mat-tab-nav-panel #tabPanel></mat-tab-nav-panel> 
+<!-- <app-login [parentInput]="parentVariable" (childOutput)="receiveOutput($event)"></app-login> -->
