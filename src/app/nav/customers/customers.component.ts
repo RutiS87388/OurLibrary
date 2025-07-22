@@ -5,6 +5,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { inject } from '@angular/core';
+import { BooksComponent } from '../books/books.component';
 
 export interface PeriodicElement {
   subscriberId: number;
@@ -91,5 +92,19 @@ export class CustomersComponent {
       }
     }
     this.closeDialog();
+  }
+  openBooksDialog(customer: PeriodicElement) {
+    // Open the BooksComponent dialog here
+    const dialogRef = this.dialog.open(BooksComponent);
+    
+    dialogRef.componentInstance.bookSelected.subscribe((book: any) => {
+      this.addBorrowingRecord(customer, book);
+      dialogRef.close();
+    });
+  }
+  
+  addBorrowingRecord(customer: PeriodicElement, book: any) {
+    // Logic to add borrowing record
+    console.log(`Customer ${customer.subscriberName} borrowed ${book.title}`);
   }
 }

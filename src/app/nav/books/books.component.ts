@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
 import { inject } from '@angular/core';
 import { MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
@@ -37,6 +37,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   imports: [MatTableModule, MatFormFieldModule, MatSelectModule, MatButtonModule, CommonModule, FormsModule],
 })
 export class BooksComponent {
+  @Output() bookSelected = new EventEmitter<any>();
 
   dataSource = ELEMENT_DATA;
   private _snackBar = inject(MatSnackBar);
@@ -58,6 +59,12 @@ export class BooksComponent {
   deleteBook(book: PeriodicElement) {
     this.dataSource = this.dataSource.filter(b => b.id !== book.id);
   }
+
+  selectBook(book: PeriodicElement) {
+    console.log(book); // בדוק אם הספר כולל את המאפיינים הנדרשים
+    this.bookSelected.emit(book);
+  }
+  
 
   filter() {
     this.filteredDataSource = this.dataSource.filter(book =>

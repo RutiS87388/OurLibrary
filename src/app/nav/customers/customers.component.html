@@ -24,9 +24,11 @@
       <td>{{ customer.subscriberEmail }}</td>
       <td>{{ customer.subscriberPhone }}</td>
       <td>{{ customer.subscriberAddress }}</td>
-      <button (click)="openEditDialog(customer)" class="styleBottom">  Edit  </button>
-      <button (click)="deleteCustomer(customer)"class="styleBottom" >Delete</button>
+      <button (click)="openEditDialog(customer)" class="styleBottom">Edit</button>
+      <button (click)="deleteCustomer(customer)" class="styleBottom">Delete</button>
+      <button (click)="openBooksDialog(customer)" class="styleBottom">Borrow Book</button> <!-- Button to borrow a book -->
     </tr>
+    
   </tbody>
 </table>
 

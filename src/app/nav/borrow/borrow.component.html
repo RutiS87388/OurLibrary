@@ -1,38 +1,31 @@
-
-<div class="t">
-  <input [(ngModel)]="subscriberName" type="text" placeholder="Search" (keyup.enter)="filter()">
-  <button (click)="filter()">🔍</button>
-  <button (click)="openDialog()">Add borrow</button>
-  </div>
-<h1>Borrow</h1>
 <table>
   <thead>
-    <tr>
-      <th>borrowId</th>
-      <th>subscriberId</th>
-      <th>subscriberName</th>
-      <th>subscriberLastName</th>
-      <th>bookId</th>
-      <th>borrowDate</th>
-      <th>beReturnd</th>
-
-    </tr>
+      <tr>
+          <th>borrowId</th>
+          <th>subscriberId</th>
+          <th>subscriberName</th>
+          <th>subscriberLastName</th>
+          <th>bookId</th>
+          <th>borrowDate</th>
+          <th>beReturnd</th>
+      </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let borrow of dataSource">
-      <td>{{ borrow.borrowId }}</td>
-      <td>{{ borrow.subscriberId }}</td>
-      <td>{{ borrow.subscriberName }}</td>
-      <td>{{ borrow.subscriberLastName }}</td>
-      <td>{{ borrow.bookId }}</td>
-      <td>{{ borrow.borrowDate }}</td>
-      <td>{{ borrow.beReturnd }}</td>
-      <button (click)="openEditDialog(borrow)" class="styleBottom">  Edit  </button>
-      <button (click)="deleteBorrow(borrow)"  class="styleBottom">Delete</button>
-
-    </tr>
+      <tr *ngFor="let borrow of dataSource">
+          <td>{{ borrow.borrowId }}</td>
+          <td>{{ borrow.subscriberId }}</td>
+          <td>{{ borrow.subscriberName }}</td>
+          <td>{{ borrow.subscriberLastName }}</td>
+          <td>{{ borrow.bookId }}</td>
+          <td>{{ borrow.borrowDate }}</td>
+          <td>{{ borrow.beReturnd }}</td>
+          <button (click)="openEditDialog(borrow)" class="styleBottom">Edit</button>
+          <button (click)="deleteBorrow(borrow)" class="styleBottom">Delete</button>
+      </tr>
   </tbody>
 </table>
+
+
 <ng-template #dialogTemplate>
   <h2>Add New Borrow</h2>
   <input [(ngModel)]="newBorrow.subscriberId" placeholder=" Name">
@@ -42,7 +35,7 @@
   <input [(ngModel)]="newBorrow.borrowDate" placeholder="ageName">
   <input [(ngModel)]="newBorrow.beReturnd" placeholder="ageName">
 
-  <button (click)="addBorrow()">Submit</button>
+  <button (click)="addNewBorrow()">Submit</button>
 </ng-template>
 
 <div *ngIf="isDialogOpen" class="dialog">

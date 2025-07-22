@@ -1,7 +1,7 @@
 <div class="t">
-<input [(ngModel)]="bookName" type="text" placeholder="Search" (keyup.enter)="filter()">
-<button (click)="filter()">🔍</button>
-<button (click)="openDialog()">Add book</button>
+  <input [(ngModel)]="bookName" type="text" placeholder="Search" (keyup.enter)="filter()">
+  <button (click)="filter()">🔍</button>
+  <button (click)="openDialog()">Add book</button>
 </div>
 <h1>Books</h1>
 <table>
@@ -16,11 +16,10 @@
       <th>Copies</th>
       <th>Copies in library</th>
       <th>AvailabloToBorrow</th>
-
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let book of dataSource">
+    <tr *ngFor="let book of dataSource" (click)="selectBook(book)">
       <td>{{ book.id }}</td>
       <td>{{ book.name }}</td>
       <td>{{ book.writerName }}</td>
@@ -30,11 +29,14 @@
       <td>{{ book.copies }}</td>
       <td>{{ book.copiesInLibrary }}</td>
       <td>{{ book.availabloToBorrow }}</td>
-      <button (click)="openEditDialog(book)" class="styleBottom">  Edit  </button>
-     <button (click)="deleteBook(book)"  class="styleBottom">Delete</button>
+      <button (click)="openEditDialog(book)" class="styleBottom">Edit</button>
+      <button (click)="deleteBook(book)" class="styleBottom">Delete</button>
     </tr>
   </tbody>
 </table>
+
+
+
 
 <ng-template #dialogTemplate>
   <h2>Add New book</h2>
