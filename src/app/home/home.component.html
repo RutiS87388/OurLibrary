@@ -1,30 +1,30 @@
-
 <app-navbar>
-  <a (click) = "onClick('/login')">להתחברות</a>
-  <a (click) = "onClick('/information')">אודות החברה שלנו</a>
-  <a (click) ="onClick('/service')">השרותים שאנו מציעים</a>
+  <a (click)="onClick('/login')">Login</a>
+  <a (click)="onClick('/information')">About Our Company</a>
+  <a (click)="onClick('/service')">Our Services</a>
 </app-navbar>
 
-<h1> הספריה העירונית</h1>
-<div class="title"> Our new books</div>
+<h1> The City Library</h1>
+
 <div class="login-container">
-  <div class="login-box">
-    <img [src]="imgA">
-    <h1 style="color: crimson;" class="w">the new book!</h1>
+  <div class="login-box" style="border: 5px solid crimson; border-radius: 10px; padding: 10px; margin: 10px;">
+    <img [src]="imgA" style="width: 100%; border-radius: 10px;">
+    <h1 style="color: crimson;" class="w">The New Book!</h1>
   </div>
-  <div class="login-box">
-    <img [src]="imgR">
-    <h1 style="color: rgb(19, 232, 37);" class="w">the new book!</h1>
+  <div class="login-box" style="border: 5px solid rgb(19, 232, 37); border-radius: 10px; padding: 10px; margin: 10px;">
+    <img [src]="imgCha" style="width: 100%; border-radius: 10px;">
+    <h1 style="color: rgb(19, 232, 37);" class="w">The New Book!</h1>
   </div>
-  <div class="login-box">
-    <!-- <img src="https://ayaladesign.co.il/wp-content/uploads/2018/12/har_hbait-min.jpg" title="עיצוב כריכה לספר הלכתי" alt="עיצוב כריכה לספר הלכתי" class="lazyloading" data-was-processed="true"> -->
-    <h1 style="color: rgb(164, 77, 94);" class="w">the new book!</h1>
+  <div class="login-box" style="border: 5px solid rgb(164, 77, 94); border-radius: 10px; padding: 10px; margin: 10px;">
+    <img [src]="imgSS" style="width: 100%; border-radius: 10px;">
+    <h1 style="color: rgb(164, 77, 94);" class="w">The New Book!</h1>
   </div>
-  <div class="login-box">
-    <img [src]="imgB">
-    <h1 style="color: rgb(205, 164, 29);" class="w">the new book!</h1>
+  <div class="login-box" style="border: 5px solid rgb(205, 164, 29); border-radius: 10px; padding: 10px; margin: 10px;">
+    <img [src]="imgF" style="width: 100%; border-radius: 10px;">
+    <h1 style="color: rgb(205, 164, 29);" class="w">The New Book!</h1>
   </div>
-  <div class="login-box">
-    <!-- <img src="https://ayaladesign.co.il/wp-content/uploads/2017/06/15590044_1300896529973363_5295298529770627044_n.jpg" title="עיצוב כריכה לספר" alt="עיצוב כריכה לספר" class="lazyloading" data-was-processed="true">    <h1 style="color: rgb(213, 20, 220);" class="w">the new book!</h1> -->
+  <div class="login-box" style="border: 5px solid rgb(29, 161, 205); border-radius: 10px; padding: 10px; margin: 10px;">
+    <img [src]="imgTa" style="width: 100%; border-radius: 10px;">
+    <h1 style="color: rgb(29, 161, 205);" class="w">The New Book!</h1>
   </div>
 </div>

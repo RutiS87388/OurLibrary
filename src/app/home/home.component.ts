@@ -28,6 +28,10 @@ export class HomeComponent {
   imgR = 'img/ruty.png'
   imgT = 'img/t.jpg'
   imgW = 'img/w.jpg'
+  imgSS ='img/ss.png'
+  imgTa  = 'img/ta.png'
+  imgCha  = 'img/cha.png'
+  imgF  = 'img/f.png'
   ngOnInit(): void {
     // const childRoutes = ['/ruty'];
   }
