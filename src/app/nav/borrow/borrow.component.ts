@@ -4,6 +4,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { MatDialog } from '@angular/material/dialog';
+import { BooksComponent } from '../books/books.component';
 
 export interface PeriodicElement {
   borrowId: number;
@@ -27,12 +29,14 @@ const ELEMENT_DATA: PeriodicElement[] = [
   selector: 'app-borrow',
   templateUrl: './borrow.component.html',
   styleUrl: './borrow.component.scss',
-  imports: [MatTableModule, FormsModule, CommonModule, MatFormFieldModule, MatSelectModule],
+  imports: [MatTableModule, FormsModule, CommonModule, MatFormFieldModule, MatSelectModule,BooksComponent],
 })
 export class BorrowComponent {
+  dataSource: PeriodicElement[] = [];
+
   subscriberName: string = '';
   displayedColumns: string[] = ['borrowId', 'subscriberName', 'subscriberLastName', 'bookId', 'borrowDate', 'beReturnd'];
-  dataSource = ELEMENT_DATA;
+  // dataSource = ELEMENT_DATA;
   clickedRows = new Set<PeriodicElement>();
   showAddBookInput: boolean = false;
   borrowName: string = '';
@@ -48,6 +52,40 @@ export class BorrowComponent {
   newBookId: number = 0;
   newBorrowDate: string = '';
   newBeReturnd: boolean = true;
+  
+  constructor(private dialog: MatDialog) {}
+
+  openBooksDialog() {
+    const dialogRef = this.dialog.open(BooksComponent);
+    
+    dialogRef.componentInstance.bookSelected.subscribe((book: any) => {
+      this.addBorrow(book); // הוספת ההשאלה כאן
+      dialogRef.close(); // סגירת החלון לאחר הבחירה
+    });
+  }
+  
+
+  addBorrow(book: any) {
+    const newBorrow = {
+        borrowId: Math.floor(Math.random() * 1000000),
+        subscriberId: 230, // החלף עם מזהה המשתמש הנכון
+        subscriberName: 'ruty', // החלף עם שם המשתמש הנכון
+        subscriberLastName: 'cohen', // החלף עם שם משפחת המשתמש הנכון
+        bookId: book.id,
+        borrowDate: new Date().toLocaleDateString(),
+        beReturnd: false
+    };
+
+    this.dataSource.push(newBorrow); // הוספת ההשאלה ל-dataSource
+}
+
+
+
+  
+  
+
+
+  
 
   filter() {
     this.filteredDataSource = this.dataSource.filter(borrow =>
@@ -82,7 +120,7 @@ export class BorrowComponent {
 
   }
 
-  addBorrow() {
+  addNewBorrow() {
     this.dataSource.push({ ...this.newBorrow });
     this.newBorrow = { borrowId: 2, subscriberId: 230, subscriberName: 'chaya', subscriberLastName: 'levi', bookId: 412, borrowDate: '06-11-24', beReturnd: true };
 
